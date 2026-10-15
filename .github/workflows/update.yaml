@@ -53,5 +53,5 @@ jobs:
           git config user.email "actions@github.com"
           git add dist/ config.json media/
           MSG="Update $(date +'%Y-%m-%d %H-%M-%S')"
-          git reset --soft $(git commit-tree $(git write-tree) -m "$MSG")
+          git reset --soft $(git commit-tree $(git write-tree) -p HEAD -m "$MSG")
           git push --force-with-lease
